@@ -1,0 +1,14 @@
+*.wc
+gph/png
+*.aux
+*.blg
+*.bbl
+*.log
+refs
+*.detex
+*.dvi
+.DS_Store
+*.gz
+*.fdb_latexmk
+*.fls
+*.synctex(busy)

@@ -1,0 +1,43 @@
+Description of program wodASC.f
+-------------------------------------------------------------
+
+wodASC.f is a program designed to read the depth dependent
+variables from a file in World Ocean Database (WOD) native
+ASCII format. The program prompts the user to input the file
+to be read. The user then selects which depth dependent variables
+they would like to write to an output file. The program then reads
+the input WOD native format file and writes the chosen  variable
+data into a 2 space separated column format or a 2 comma separated
+colun format  as such: 2(f12.4) or 2(f12.4,','). The user has the
+choice of comma separated or straight tabular (space separated) form.
+
+The first column is the depth and the second column is the 
+variable value. Before each new profile, there is a line
+containing the latitude, longitude, year, month and day of 
+the profile measurement. This line begins with a % which is the comment
+line denoter in Matlab. Therefore, this line will not be
+read into Matlab when loading the file, but it does allow
+the user to physically scan the data first and manipulate it
+by individual profile if the user so chooses. If the depth level
+contains a missing value for the variable, then the variable
+and it's associated depth are not written to the output file.
+
+To create an executable, compile in standard FORTRAN
+(e.g.)  g77 -o <executable_file> wodASC.f
+
+
+Reading into Matlab:
+-------------------------------------------------------------
+
+An example:  wodASC.f has been run and the user has created
+a file entitled chl_all.5000 chlorophyll data have been read. 
+
+In Matlab type:
+
+load chl_all.5000
+depth = chl_all(:,1)
+chl   = chl_all(:,2)
+
+
+The user is now ready to create a scatter diagram or 
+manipulate the data in Matlab.

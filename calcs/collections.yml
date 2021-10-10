@@ -1,0 +1,18 @@
+FOSI_monthly:
+  source: cesm
+  open_dataset:
+    format: single_variable
+    file_name_pattern: '{dirin}/{case}.{stream}.{variable}.{datestr}.nc'
+    dirin: /glade/p_old/decpred/CESM-DPLE_POPCICEhindcast
+    case: g.e11_LENS.GECOIAF.T62_g16.009
+    datestr: 024901-031612
+    stream: pop.h
+FOSI_monthly_sigma:
+  source: cesm
+  open_dataset:
+    format: single_variable
+    file_name_pattern: '{dirin}/{case}.{stream}.sigma.{variable}.{datestr}.nc'
+    dirin: /glade/scratch/mclong/calcs/o2-prediction/sigma_coord/CESM-DPLE_POPCICEhindcast
+    case: g.e11_LENS.GECOIAF.T62_g16.009
+    datestr: 024901-031612
+    stream: pop.h
